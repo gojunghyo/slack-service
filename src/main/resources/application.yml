@@ -1,0 +1,7 @@
+server:
+  port: 9090
+
+slack:
+  token:
+  token-gojgho:
+  token-woowa:
