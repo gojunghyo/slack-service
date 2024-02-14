@@ -12,9 +12,9 @@ class SlackController(
         @Autowired var slackService: SlackService
 ) {
 
-    @GetMapping("/mz/holiday/check")
-    fun sendMZHolidayCheck() {
-        slackService.sendMZHolidayCheck()
+    @GetMapping("/holiday/check")
+    fun sendChannelHolidayCheck() {
+        slackService.sendChannelHolidayCheck()
     }
 
     @GetMapping("/dm/send/me")
