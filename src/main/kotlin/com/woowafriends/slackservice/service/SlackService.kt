@@ -1,5 +1,6 @@
 package com.woowafriends.slackservice.service
 
+import com.woowafriends.slackservice.config.SlackPropertiesConfig
 import lombok.RequiredArgsConstructor
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.configurationprocessor.json.JSONException
@@ -14,13 +15,14 @@ import java.time.LocalDate
 @Service
 @RequiredArgsConstructor
 class SlackService(
-       @Autowired private val slackHttpHeaders: HttpHeaders
+       @Autowired private val slackHttpHeaders: HttpHeaders,
+       @Autowired private val slackPropertiesConfig: SlackPropertiesConfig
 ) {
     private val userList: List<String> = listOf("your slack email")
 
-    private val POST_URL: String = "https://slack.com/api/chat.postMessage"
-    private val LOOKUP_URL: String = "https://slack.com/api/users.lookupByEmail"
-    private val CHANEL_ID = ""
+    private val POST_URL: String = slackPropertiesConfig.post
+    private val LOOKUP_URL: String = slackPropertiesConfig.lookup
+    private val CHANEL_ID = slackPropertiesConfig.channelId
 
 
     fun dmSendMe() {
