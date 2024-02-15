@@ -5,3 +5,8 @@ slack:
   token:
   token-gojgho:
   token-woowa:
+
+slack-url:
+  post: https://slack.com/api/users.lookupByEmail
+  lookup: https://slack.com/api/chat.postMessage
+  channelId:
