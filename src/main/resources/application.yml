@@ -7,6 +7,6 @@ slack:
   token-woowa:
 
 slack-url:
-  post: https://slack.com/api/users.lookupByEmail
-  lookup: https://slack.com/api/chat.postMessage
+  post: https://slack.com/api/chat.postMessage
+  lookup: https://slack.com/api/users.lookupByEmail
   channelId:
